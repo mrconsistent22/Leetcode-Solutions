@@ -11,10 +11,10 @@ public:
             rev = rev*10 + ld;
         }
 
-        if(rev > INT_MAX || rev < INT_MIN){
-            return 0;
-        }
-        else if(rev == dup){
+        // if(rev > INT_MAX || rev < INT_MIN){
+        //     return 0;
+        // }
+        if(rev == dup){
             return true;
         }else {
             return false;
