@@ -7,7 +7,7 @@ public:
         for(int i = 0; i<n; i++){
             asum = asum + nums[i];
         }
-        int ans = sum - asum;
-        return ans;
+        //int ans = sum - asum;
+        return sum - asum;
     }
 };
