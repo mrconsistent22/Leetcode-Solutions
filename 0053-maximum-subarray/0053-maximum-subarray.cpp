@@ -18,7 +18,7 @@ public:
             if(sum > maxx){
                 maxx = sum;
             }
-            if(sum < 0 && nums.size() > 1){
+            if(sum < 0 ){
                 sum = 0;
             }
         }
