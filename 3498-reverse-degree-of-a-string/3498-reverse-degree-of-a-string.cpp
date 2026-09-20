@@ -6,8 +6,6 @@ public:
             int pos = i+1;
             int rev = 'z' - s[i] + 1;
             sum = sum + pos*rev;
-            // pos = 0;
-            // rev = 0;
         }
         return sum;
     }
