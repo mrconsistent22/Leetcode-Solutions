@@ -5,16 +5,17 @@ public:
         sort(nums.begin(), nums.end());
         int longest = 1;
         int lastSmall = INT_MIN;
-        int count = 1;
+        int count = 0;
         
-        for(int i = 1; i<nums.size(); i++){
-            if(nums[i] == nums[i-1] + 1){
-                //lastSmall = nums[i];
+        for(int i = 0; i<nums.size(); i++){
+            if(nums[i]-1 == lastSmall){
                 count++;
-            }else if(nums[i] == nums[i-1]){
+                lastSmall = nums[i];
+            }else if(nums[i] == lastSmall){
                 continue;
             }else{
                 count = 1;
+                lastSmall = nums[i];
             }
             longest = max(longest, count);
         }
