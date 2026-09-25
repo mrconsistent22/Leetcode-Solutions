@@ -1,20 +1,33 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        vector<int> ans;
+         vector<int> ans;
 
-        for(int  i = 0; i<nums.size(); i++){
-            if(ans.size() == 0 || ans[0] != nums[i]){
+        // for(int  i = 0; i<nums.size(); i++){
+        //     if(ans.size() == 0 || ans[0] != nums[i]){
 
-                int count = 0;
-                for(int j = 0; j<nums.size(); j++){
-                    if(nums[i] == nums[j]){
-                        count++;
-                    }
-                }
-                if(count > nums.size()/3){
-                    ans.push_back(nums[i]);
-                }
+        //         int count = 0;
+        //         for(int j = 0; j<nums.size(); j++){
+        //             if(nums[i] == nums[j]){
+        //                 count++;
+        //             }
+        //         }
+        //         if(count > nums.size()/3){
+        //             ans.push_back(nums[i]);
+        //         }
+        //     }
+        //     if(ans.size() == 2){
+        //         break;
+        //     }
+        // }
+        // return ans;
+
+        map<int, int> mpp;
+        int threshold = (nums.size())/3 + 1;
+        for(int i = 0; i<nums.size(); i++){
+            mpp[nums[i]]++;
+            if(mpp[nums[i]] == threshold){
+                ans.push_back(nums[i]);
             }
             if(ans.size() == 2){
                 break;
